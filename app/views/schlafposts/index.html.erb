@@ -1,0 +1,39 @@
+<h1>Listing schlafposts</h1>
+<!-- Todo hier muss noch die Formatierung angepasst werden -->
+<table>
+  <tr>
+    <th>User</th>
+    <th>Titel</th>
+<!--<th>Date</th>
+    <th>Anfang</th>
+    <th>Ende</th>
+    <th>Stimmung</th>
+    <th>Dream</th>
+    <th>description</th>
+    <th>Verpennt</th> !-->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @schlafposts.each do |schlafpost| %>
+  <tr>
+    <td><%= link_to "#{schlafpost.user}", schlafpost %></td>
+    <td><%= schlafpost.title %></td>
+<!--    <td><%= schlafpost.date %></td>
+    <td><%= schlafpost.anfang %></td>
+    <td><%= schlafpost.ende %></td>
+    <td><%= schlafpost.stimmung %></td>
+    <td><%= schlafpost.dream %></td>
+    <td><%= schlafpost.description %></td>
+    <td><%= schlafpost.verpennt %></td>  !-->
+<!--    <td><%= link_to 'Show', schlafpost %></td> -->
+    <td><%= link_to 'Edit', edit_schlafpost_path(schlafpost) %></td>
+    <td><%= link_to 'Destroy', schlafpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Schlafpost', new_schlafpost_path %>

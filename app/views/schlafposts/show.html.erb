@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @schlafpost.user %>
+</p>
+
+<p>
+  <b>Titel:</b>
+  <%= @schlafpost.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @schlafpost.date %>
+</p>
+
+<p>
+  <b>Anfang:</b>
+  <%= @schlafpost.anfang %>
+</p>
+
+<p>
+  <b>Ende:</b>
+  <%= @schlafpost.ende %>
+</p>
+
+<p>
+  <b>Stimmung:</b>
+  <%= @schlafpost.stimmung %>
+</p>
+
+<p>
+  <b>Dream:</b>
+  <%= @schlafpost.dream %>
+</p>
+
+<p>
+  <b>Descripion:</b>
+  <%= @schlafpost.description %>
+</p>
+
+<p>
+  <b>Verpennt:</b>
+  <%= @schlafpost.verpennt %>
+</p>
+
+
+<%= link_to 'Edit', edit_schlafpost_path(@schlafpost) %> |
+<%= link_to 'Back', schlafposts_path %>

@@ -1,0 +1,53 @@
+<%= form_for(@schlafpost) do |f| %>
+  <% if @schlafpost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schlafpost.errors.count, "error") %> prohibited this schlafpost from being saved:</h2>
+
+      <ul>
+      <% @schlafpost.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.select :title, %w[regular nap1 nap2 nap3 nap4 nap5],:prompt=> "Bitte wählen"%>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date,:start_year =>2012,
+                            :order=> [:year,:month,:day],
+                            :use_month_numbers => true %>
+  </div>
+  <div class="field">
+    <%= f.label :anfang %><br />
+    <%= f.time_select :anfang, :minute_step =>5 %>
+  </div>
+  <div class="field">
+    <%= f.label :ende %><br />
+    <%= f.time_select :ende, :minute_step => 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :stimmung %><br />
+    <%= f.number_field :stimmung %>
+  </div>
+  <div class="field">
+    <%= f.label :dream, "Dream (optional)" %><br />
+    <%= f.text_area :dream %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :verpennt %><br />
+    <%= f.check_box :verpennt %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

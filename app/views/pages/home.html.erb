@@ -1,7 +1,7 @@
 <% if current_user %>
     Welcome <%= current_user.uid%>!
-    <%= link_to "Sign Out", signout_path %>
+    <%= link_to "Sign Out", signout_path , :class => "btn btn-mini btn-danger"%>
 <% else %>
-    <%= link_to "Sign in with cas", "/auth/cas" %>
+    <%= link_to "Sign in with cas", "/auth/cas" , :class => "btn btn-mini"%>
 <% end %>
 

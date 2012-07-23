@@ -25,14 +25,22 @@
           </a>
           <ul class="dropdown-menu">
             <li>
+              <% if current_user %>
               <%=  link_to edit_user_path(current_user.id) do %>
+                      <% end %>
               <i class="icon-cog"></i> Einstellungen
                   <%end%>
             </li>
             <li>
-                <%= link_to signout_path do %>
-                    <i class="icon-off"></i> Ausloggen
-                <% end %>
+                <%if current_user%>
+                    <%= link_to signout_path do %>
+                        <i class="icon-off"></i> Ausloggen
+                    <% end %>
+                  <%else%>
+                    <%= link_to "/auth/cas" do %>
+                        <i class="icon-on"></i> Einloggen
+                  <%end%>
+                <%end%>
             </li>
           </ul>
         </li>

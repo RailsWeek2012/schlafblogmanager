@@ -32,9 +32,9 @@
     <div id="footer">
       &copy 2012
       <% if user_signed_in? %>
-          <%=  link_to "logout", signout_path, method: :delete%>
+          <%=  link_to "logout", signout_path, method: :delete, :class => "btn btn-mini btn-danger"%>
       <% else %>
-          <%=  link_to "login", "/auth/cas" %>
+          <%=  link_to "login", "/auth/cas",:class => "btn btn-mini btn-warning" %>
       <%end%>
     </div>
 </body>

@@ -27,9 +27,10 @@
             <li>
               <% if current_user %>
               <%=  link_to edit_user_path(current_user.id) do %>
-                      <% end %>
+
               <i class="icon-cog"></i> Einstellungen
                   <%end%>
+                  <% end %>
             </li>
             <li>
                 <%if current_user%>

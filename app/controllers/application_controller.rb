@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
   def require_login!
     unless user_signed_in?
-      redirect_to "/auth/cas", alert: "Bitte zuerst anmelden!"
+      redirect_to root_url, alert: "Bitte zuerst anmelden!"
     end
   end
 end

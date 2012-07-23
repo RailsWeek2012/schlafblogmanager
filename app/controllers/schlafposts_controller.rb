@@ -42,12 +42,12 @@ class SchlafpostsController < ApplicationController
   # POST /schlafposts.json
   def create
     @schlafpost = Schlafpost.new(params[:schlafpost])
-#TODO
-#Hier muss noch der richtige username hin
+
     @schlafpost.user = current_user
+
     respond_to do |format|
       if @schlafpost.save
-        format.html { redirect_to @schlafpost, notice: 'Schlafpost was successfully created.' }
+        format.html { redirect_to schlafposts_index_url(current_user.id), notice: 'Schlafpost was successfully created.' }
         format.json { render json: @schlafpost, status: :created, location: @schlafpost }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class SchlafpostsController < ApplicationController
 
     respond_to do |format|
       if @schlafpost.update_attributes(params[:schlafpost])
-        format.html { redirect_to @schlafpost, notice: 'Schlafpost was successfully updated.' }
+        format.html { redirect_to schlafposts_index(current_user.id), notice: 'Schlafpost was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -79,7 +79,7 @@ class SchlafpostsController < ApplicationController
     @schlafpost.destroy
 
     respond_to do |format|
-      format.html { redirect_to schlafposts_url }
+      format.html { redirect_to schlafposts_index_url(current_user.id) }
       format.json { head :no_content }
     end
   end

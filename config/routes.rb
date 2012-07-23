@@ -4,11 +4,10 @@ Schlafblogmanager::Application.routes.draw do
   get "pages/home"
 
 
-  get "schlafposts/:id"  => "schlafposts#index", as: "schlafposts"
- # get "schlafposts/:id/:id"  => "schlafposts#show", as: "schlafposts"
-  resources :schlafposts, only: [:new, :create,:show,:update, :edit]
 
 
+  resources :schlafposts, only: [:new,  :edit, :create, :update, :destroy]
+  get "/schlafposts/:id" => "schlafposts#index", :as => :schlafposts_index
   root to: "pages#home"
 
   match "/auth/:provider/callback" => "sessions#create"

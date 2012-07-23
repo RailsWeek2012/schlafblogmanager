@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @schlafpost %> |
-<%= link_to 'Back', schlafposts_path %>
+<%= link_to 'Back', schlafposts_index_path(current_user.id) %>

@@ -1,5 +1,6 @@
+
 <h1><%=@schlafposts.first.user.uid%>'s Schlafblog</h1>
-<!-- Todo hier muss noch die Formatierung angepasst werden -->
+        <!-- Todo hier muss noch die Formatierung angepasst werden -->
 
 
 <% @temp %>
@@ -19,12 +20,14 @@
       </thread>
       <tbody>
         <tr>
-          <td> <%=  schlafpost.description %></td>
-          <td> <%=  schlafpost.dream %></td>
+          <td> Beschreibung: <%=  schlafpost.description %></td>
+        </tr>
+        <tr><% unless schlafpost.dream == ""%><td> Geträumt: <%=  schlafpost.dream %> </td><%end%> </tr>
 
     <% if current_user == schlafpost.user %>
-    <td><%= link_to 'Edit', edit_schlafpost_path(schlafpost) %></td>
-    <td><%= link_to 'Destroy', schlafpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <tr>
+          <td><%= link_to 'Edit', edit_schlafpost_path(schlafpost) %>
+            <%= link_to 'Destroy', schlafpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <%end%>
         </tr>
       </tbody>

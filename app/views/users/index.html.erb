@@ -10,7 +10,13 @@
   <tbody>
     <% @users.each do |user| %>
     <tr>
-      <td> <%= user.uid %></td>
+      <td>
+        <% if user.name%>
+        <%= user.name %>
+            <% else %>
+        <%= user.uid %>
+            <%end%>
+      </td>
 
       <td>
         <%=  link_to 'Show', schlafposts_index_path(user.id), :class => "btn btn-mini btn-info" %>

@@ -1,6 +1,6 @@
 Schlafblogmanager::Application.routes.draw do
-  get "users/index"
-
+  get "users/index", as: :users
+  resources :users, only: [:edit,:update]
   get "pages/home"
 
 

@@ -12,7 +12,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
             <% if current_user %>
-            <%=current_user.uid%>
+                <% if current_user.name%>
+                    <%= current_user.name %>
+                <% else %>
+                    <%= current_user.uid %>
+                <%end%>
+
                 <% else %>
             Gast
                 <%end%>
@@ -20,12 +25,12 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <%=  link_to "#" do %>
+              <%=  link_to edit_user_path(current_user.id) do %>
               <i class="icon-cog"></i> Einstellungen
                   <%end%>
             </li>
             <li>
-                <%= link_to "#" do %>
+                <%= link_to signout_path do %>
                     <i class="icon-off"></i> Ausloggen
                 <% end %>
             </li>

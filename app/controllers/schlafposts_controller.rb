@@ -1,8 +1,9 @@
 class SchlafpostsController < ApplicationController
+  before_filter :require_login!
   # GET /schlafposts
   # GET /schlafposts.json
   def index
-    @schlafposts = Schlafpost.all
+    @schlafposts = Schlafpost.find_all_by_user_id(params[:id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,7 +44,7 @@ class SchlafpostsController < ApplicationController
     @schlafpost = Schlafpost.new(params[:schlafpost])
 #TODO
 #Hier muss noch der richtige username hin
-    @schlafpost.user = "bla"#current_user
+    @schlafpost.user = current_user
     respond_to do |format|
       if @schlafpost.save
         format.html { redirect_to @schlafpost, notice: 'Schlafpost was successfully created.' }

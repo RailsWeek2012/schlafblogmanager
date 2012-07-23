@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120720125358) do
 
   create_table "schlafposts", :force => true do |t|
-    t.string   "user"
+    t.integer  "user_id"
     t.string   "title"
     t.date     "date"
     t.time     "anfang"

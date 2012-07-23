@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+
     <%=  render "layouts/navbar"%>
     <div class="container">
       <% flash.each do |name, msg| %>
@@ -24,5 +27,15 @@
       </div>
     </div>
 
+
+
+    <div id="footer">
+      &copy 2012
+      <% if user_signed_in? %>
+          <%=  link_to "logout", signout_path, method: :delete%>
+      <% else %>
+          <%=  link_to "login", "/auth/cas" %>
+      <%end%>
+    </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 class CreateSchlafposts < ActiveRecord::Migration
   def change
     create_table :schlafposts do |t|
-      t.string :user
+      t.integer :user_id
       t.string :title
       t.date :date
       t.time :anfang

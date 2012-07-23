@@ -13,11 +13,11 @@
       <td> <%= user.uid %></td>
 
       <td>
-        <%=  link_to 'Show', schlafposts_path, :class => "btn btn-mini btn-info" %>
+        <%=  link_to 'Show', schlafposts_path(user.id), :class => "btn btn-mini btn-info" %>
       </td>
     </tr>
       <% end %>
   </tbody>
 </table>
 
-<%=  link_to 'neuer Schlafblog', new_schlafpost_path, :class => "btn btn-mini btn primary" %>
+<%=  link_to 'neuer Schlafblog', new_schlafpost_path, :class => "btn btn-mini btn-primary" %>

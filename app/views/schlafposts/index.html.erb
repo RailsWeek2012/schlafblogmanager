@@ -1,38 +1,35 @@
-<h1>Listing schlafposts</h1>
+<h1><%=@schlafposts.first.user.uid%>'s Schlafblog</h1>
 <!-- Todo hier muss noch die Formatierung angepasst werden -->
-<table>
-  <tr>
-    <th>User</th>
-    <th>Titel</th>
-<!--<th>Date</th>
-    <th>Anfang</th>
-    <th>Ende</th>
-    <th>Stimmung</th>
-    <th>Dream</th>
-    <th>description</th>
-    <th>Verpennt</th> !-->
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @schlafposts.each do |schlafpost| %>
-  <tr>
-    <td><%= link_to "#{schlafpost.user}", schlafpost %></td>
-    <td><%= schlafpost.title %></td>
-<!--    <td><%= schlafpost.date %></td>
-    <td><%= schlafpost.anfang %></td>
-    <td><%= schlafpost.ende %></td>
-    <td><%= schlafpost.stimmung %></td>
-    <td><%= schlafpost.dream %></td>
-    <td><%= schlafpost.description %></td>
-    <td><%= schlafpost.verpennt %></td>  !-->
-<!--    <td><%= link_to 'Show', schlafpost %></td> -->
+
+<% @temp %>
+    <% @schlafposts.each do |schlafpost| %>
+    <% unless @temp==schlafpost.date%>
+    <h3> <%=schlafpost.date.strftime("%d.%m.%y")%></h3>
+        <% @temp = schlafpost.date %>
+        <%end%>
+    <table class="table-bordered table-striped table-condensed">
+
+      <thread>
+        <tr>
+            <td><b><%=schlafpost.title%></b>
+             <%=schlafpost.anfang.strftime("%H:%M")%>
+            - <%=schlafpost.ende.strftime("%H:%M")%></td>
+        </tr>
+      </thread>
+      <tbody>
+        <tr>
+          <td> <%=  schlafpost.description %></td>
+          <td> <%=  schlafpost.dream %></td>
+
+    <% if current_user == schlafpost.user %>
     <td><%= link_to 'Edit', edit_schlafpost_path(schlafpost) %></td>
     <td><%= link_to 'Destroy', schlafpost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <%end%>
+        </tr>
+      </tbody>
+    </table>
 <% end %>
-</table>
 
 <br />
 

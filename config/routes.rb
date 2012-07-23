@@ -3,7 +3,11 @@ Schlafblogmanager::Application.routes.draw do
 
   get "pages/home"
 
-  resources :schlafposts
+
+  get "schlafposts/:id"  => "schlafposts#index", as: "schlafposts"
+ # get "schlafposts/:id/:id"  => "schlafposts#show", as: "schlafposts"
+  resources :schlafposts, only: [:new, :create,:show,:update, :edit]
+
 
   root to: "pages#home"
 

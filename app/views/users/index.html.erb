@@ -1,2 +1,23 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="page-header">
+  <h2>Blogs<small> einfach verwalten</small></h2>
+</div>
+<table class="table table-striped table-bordered table-condensed">
+  <thread>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thread>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td> <%= user.name %></td>
+
+      <td>
+        <%=  link_to 'Show', schlafposts_path, :class => "btn btn-mini btn-info" %>
+      </td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<%=  link_to 'neuer Schlafblog', new_schlafpost_path, :class => "btn btn-mini btn primary" %>

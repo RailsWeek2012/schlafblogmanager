@@ -15,7 +15,19 @@
         <tr>
             <td><b><%=schlafpost.title%></b>
              <%=schlafpost.anfang.strftime("%H:%M")%>
-            - <%=schlafpost.ende.strftime("%H:%M")%></td>
+            - <%=schlafpost.ende.strftime("%H:%M")%>
+              <%case schlafpost.stimmung%>
+              <% when 1 %>
+                  <img src= "http://www.allmystery.de/i/tTDpKZJ_tired-sleeping-smiley-4655.gif">
+              <% when 2 %>
+                  <img src= "http://fg-community.net/wcf/images/smilies/smiley_weinen.gif">
+              <% when 3 %>
+                  <img src= "http://www.gifmix.de/3d-smiley.php?bild=verwirrte-3d-smilies/0017.gif">
+              <% when 4 %>
+                  <img src= "http://www.smfads.com/forums/Smileys/smfads/smiley.gif">
+              <% when 5 %>
+                  <img src="http://www.kekskruemmel.de/forum/images/smilies/smiley_emoticons_hurra3.gif">
+              <%end%>
         </tr>
       </thread>
       <tbody>

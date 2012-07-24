@@ -25,9 +25,10 @@ class UsersController < ApplicationController
 
   def charts
     temp = 0
-    data_c = 0
+
     data1=0
     @schlafpost = Schlafpost.find_all_by_user_id(params[:user_id])
+    data_c = (@schlafpost.first.ende - @schlafpost.first.anfang)/3600
     @schlafpost.each do |schlafblog|
       if schlafblog.date == temp
         data1 += (schlafblog.ende - schlafblog.anfang) /3600
@@ -40,9 +41,13 @@ class UsersController < ApplicationController
         temp = schlafblog.date
       end
     end
-
+    data_c=data_c.round(2)
     @data = [data_c,(24-data_c)]
   end
 
+  private
+  def round_n(n)
+    val = (self*10**n).round.to_f / 10**n
+  end
 
 end

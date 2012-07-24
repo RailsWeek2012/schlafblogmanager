@@ -33,7 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :stimmung %><br />
-    <%= f.number_field :stimmung %>
+    <img src= "http://www.allmystery.de/i/tTDpKZJ_tired-sleeping-smiley-4655.gif"><%= f.radio_button :stimmung, 1%>
+    <img src= "http://fg-community.net/wcf/images/smilies/smiley_weinen.gif"><%= f.radio_button :stimmung, 2%>
+    <img src= "http://www.gifmix.de/3d-smiley.php?bild=verwirrte-3d-smilies/0017.gif"><%= f.radio_button :stimmung, 3%>
+    <img src= "http://www.smfads.com/forums/Smileys/smfads/smiley.gif"><%= f.radio_button :stimmung, 4%>
+    <img src="http://www.kekskruemmel.de/forum/images/smilies/smiley_emoticons_hurra3.gif"><%= f.radio_button :stimmung, 5%>
   </div>
   <div class="field">
     <%= f.label :dream, "Dream (optional)" %><br />

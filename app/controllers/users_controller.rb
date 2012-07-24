@@ -21,4 +21,28 @@ class UsersController < ApplicationController
       end
     end
   end
+
+
+  def charts
+    temp = 0
+    data_c = 0
+    data1=0
+    @schlafpost = Schlafpost.find_all_by_user_id(params[:user_id])
+    @schlafpost.each do |schlafblog|
+      if schlafblog.date == temp
+        data1 += (schlafblog.ende - schlafblog.anfang) /3600
+        if schlafblog == @schlafpost.last
+          data_c = (data_c + data1)/2
+        end
+      else
+        data_c = (data_c + data1)/2
+        data1=(schlafblog.ende - schlafblog.anfang) /3600
+        temp = schlafblog.date
+      end
+    end
+
+    @data = [data_c,(24-data_c)]
+  end
+
+
 end

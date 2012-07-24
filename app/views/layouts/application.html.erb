@@ -22,7 +22,7 @@
         <div class="span9"><%=  yield %></div>
         <div class="span3">
           <h2>Information</h2>
-          Sidebar Text
+          <%= link_to "Statistiken", charts_path(current_user.id) %>
         </div>
       </div>
     </div>

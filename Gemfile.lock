@@ -42,6 +42,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    googlecharts (1.6.8)
     hashie (1.2.0)
     hike (1.2.1)
     i18n (0.6.0)
@@ -116,6 +117,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.0.4.0)
   coffee-rails (~> 3.2.1)
+  googlecharts
   jquery-rails
   omniauth-cas
   rails (= 3.2.6)

@@ -2,9 +2,7 @@ Schlafblogmanager::Application.routes.draw do
   get "users/index", as: :users
   resources :users, only: [:edit,:update]
   get "pages/home"
-
-
-
+  get "/users/:user_id/charts" => "users#charts", as: :charts
 
   resources :schlafposts, only: [:new,  :edit, :create, :update, :destroy]
   get "/schlafposts/:id" => "schlafposts#index", :as => :schlafposts_index

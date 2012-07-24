@@ -63,7 +63,7 @@ class SchlafpostsController < ApplicationController
 
     respond_to do |format|
       if @schlafpost.update_attributes(params[:schlafpost])
-        format.html { redirect_to schlafposts_index(current_user.id), notice: 'Schlafpost was successfully updated.' }
+        format.html { redirect_to schlafpost_path(current_user.id), notice: 'Schlafpost was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

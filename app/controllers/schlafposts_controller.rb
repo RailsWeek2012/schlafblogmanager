@@ -1,5 +1,5 @@
 class SchlafpostsController < ApplicationController
-  before_filter :require_login!
+ # before_filter :require_login!
   # GET /schlafposts
   # GET /schlafposts.json
   def index

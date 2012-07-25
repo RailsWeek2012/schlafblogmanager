@@ -6,6 +6,7 @@
 <% @temp %>
     <% @schlafposts.each do |schlafpost| %>
     <% unless @temp==schlafpost.date%>
+        ______________________________________________________________________________________________________
     <h3> <%=schlafpost.date.strftime("%d.%m.%y")%></h3>
         <% @temp = schlafpost.date %>
         <%end%>
@@ -47,5 +48,6 @@
 <% end %>
 
 <br />
-
+  <% if user_signed_in? %>
 <%= link_to 'New Schlafpost', new_schlafpost_path, :class => "btn btn-mini btn-success" %>
+  <% end %>

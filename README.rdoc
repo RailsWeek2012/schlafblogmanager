@@ -3,13 +3,7 @@ Das ist ein Schlafblogmanager, um seine Schlafphasen zu dokumentieren
 
 ==Quellen:
 
-(Images)
-"http://www.allmystery.de/i/tTDpKZJ_tired-sleeping-smiley-4655.gif";
-http://fg-community.net/wcf/images/smilies/smiley_weinen.gif;
-http://www.gifmix.de/3d-smiley.php?bild=verwirrte-3d-smilies/0017.gif;
-http://www.smfads.com/forums/Smileys/smfads/smiley.gif;
-http://www.kekskruemmel.de/forum/images/smilies/smiley_emoticons_hurra3.gif
-
+freegifs.de
 
 (Twitter Bootstrap)
 http://loeffelkoenig.de/~fate/RORSS12/;

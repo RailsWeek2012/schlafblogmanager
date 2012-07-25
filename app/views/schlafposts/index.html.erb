@@ -1,9 +1,5 @@
 
-<h1><% if @schlafposts.first.user.name == ""%>
-      <%= @schlafposts.first.user.uid %>
-      <%  else %>
-      <%=@schlafposts.first.user.name%>
-         <%end%>'s Schlafblog</h1>
+<h1><%= if_user_has_a_name(@schlafposts.first.user)%>'s Schlafblog</h1>
 
 
 

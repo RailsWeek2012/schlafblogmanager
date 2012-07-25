@@ -3,7 +3,7 @@ class SchlafpostsController < ApplicationController
   # GET /schlafposts
   # GET /schlafposts.json
   def index
-    @schlafposts = Schlafpost.find_all_by_user_id(params[:id])
+    @schlafposts = Schlafpost.find_all_by_user_id(params[:id],:order => "date DESC")
 
     respond_to do |format|
       format.html # index.html.erb

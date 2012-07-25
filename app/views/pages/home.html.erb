@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-    Welcome <%= current_user.uid%>!
+    Welcome <%= if_user_has_a_name(current_user)%>!
     <%= link_to "Sign Out", signout_path , :class => "btn btn-mini btn-danger"%>
 <% else %>
     <%= link_to "Sign in with cas", "/auth/cas" , :class => "btn btn-mini"%>

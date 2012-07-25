@@ -9,7 +9,7 @@ module UsersHelper
 
     end
 
-    def if_user_has_a_name
+    def if_user_has_a_name(user)
       if user.name
         user.name
       else

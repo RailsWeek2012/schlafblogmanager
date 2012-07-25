@@ -11,11 +11,7 @@
     <% @users.each do |user| %>
     <tr>
       <td>
-        <% if user.name%>
-        <%= user.name %>
-            <% else %>
-        <%= user.uid %>
-            <%end%>
+        <%= if_user_has_a_name(user)%>
       </td>
 
       <td>

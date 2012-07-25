@@ -23,6 +23,11 @@
         <div class="span3">
           <h2>Information</h2>
           <%= link_to "Statistiken", charts_path(current_user.id), :class => "btn btn-large" if user_signed_in?%>
+          <br>
+
+
+
+
         </div>
       </div>
     </div>
@@ -38,5 +43,7 @@
           <%=  link_to "login", "/auth/cas",:class => "btn btn-mini btn-warning" %>
       <%end%>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                   <%= link_to image_tag("banner.gif"),"http://www.freegifs.de"%>
 </body>
 </html>

@@ -33,12 +33,12 @@
   </div>
   <div class="field">
     <%= f.label :stimmung %><br />
-    <
-    <img src="http://www.freegifs.de/download.php?image=muede-krank/muede-krank_2f7c90ce56fb4a70e34c04d8d7692dd0.gif&host=8&id=26409"><%= f.radio_button :stimmung, 1%>
-    <img src= "http://www.freegifs.de/download.php?image=muede-krank/muede-krank_e8fe9ab3b02e513df479edc57d141040.gif&host=8&id=26407"><%= f.radio_button :stimmung, 2%>
-    <img src= "http://www.freegifs.de/download.php?image=konfus-verwirrt/konfus-verwirrt_10b96b98b614819ab4e4a2d2731ea66d.gif&host=8&id=26277"><%= f.radio_button :stimmung, 3%>
-    <img src= "http://www.freegifs.de/download.php?image=froehlich/froehlich_cd72c79c3eeb7355e20bba58e9088654.gif&host=8&id=26257"><%= f.radio_button :stimmung, 4%>
-    <img src="http://www.freegifs.de/download.php?image=froehlich/froehlich_dd71d9daac1113ff790069a42c49baa6.gif&host=8&id=26238"><%= f.radio_button :stimmung, 5%>
+
+    <%= image_tag("1.gif")   %><%= f.radio_button :stimmung, 1%>
+    <%= image_tag("2.gif")   %><%= f.radio_button :stimmung, 2%>
+    <%= image_tag("3.gif")   %><%= f.radio_button :stimmung, 3%>
+    <%= image_tag("4.gif")   %><%= f.radio_button :stimmung, 4%>
+    <%= image_tag("5.gif")   %><%= f.radio_button :stimmung, 5%>
   </div>
   <div class="field">
     <%= f.label :dream, "Dream (optional)" %><br />

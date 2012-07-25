@@ -1,6 +1,10 @@
 
-<h1><%=@schlafposts.first.user.uid%>'s Schlafblog</h1>
-        <!-- Todo hier muss noch die Formatierung angepasst werden -->
+<h1><% if @schlafposts.first.user.name == ""%>
+      <%= @schlafposts.first.user.uid %>
+      <%  else %>
+      <%=@schlafposts.first.user.name%>
+         <%end%>'s Schlafblog</h1>
+
 
 
 <% @temp %>

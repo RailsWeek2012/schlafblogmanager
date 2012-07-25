@@ -1,13 +1,2 @@
-<!--<%=  @data %>
-<%= link_to "statistiken",
-Gchart.pie_3d(:size => '400x200',
-              :title => "durchschnittliche Schlafdauer",
-              :labels => %w[geschlafen wach],
-              :data => @data)%>   !-->
+<img src="<%= Go_Chart(@data,"#{@data[0]}h geschlafen", "#{@data[1]}h wach")%>">
 
-<img src="<%=Gchart.pie_3d(:size => '600x200',
-                          :title => "durchschnittliche Schlafdauer",
-                          :labels => ["#{@data[0]}h geschlafen", "#{@data[1]}h wach"],
-                          :data => @data,
-                          :bar_colors => 'A6121F,313436')
-%>">

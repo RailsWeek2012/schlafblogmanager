@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if user_signed_in? %>
     Welcome <%= current_user.uid%>!
     <%= link_to "Sign Out", signout_path , :class => "btn btn-mini btn-danger"%>
 <% else %>

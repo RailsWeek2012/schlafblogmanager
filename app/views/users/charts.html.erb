@@ -1,2 +1,4 @@
-<img src="<%= Go_Chart(@data,%w[#{@data[0]}h geschlafen" "#{@data[1]}h wach],"durchschnittliche Schlafdauer")%>">
+<img src="<%= Go_Chart(@data,["#{@data[0]}h geschlafen", "#{@data[1]}h wach"],"durchschnittliche Schlafdauer")%>">
 
+
+<img src="<%= Go_Chart([@verpennt,@nicht_verpennt],["#{@verpennt*100/(@verpennt+@nicht_verpennt)}% verpennt" ,"#{@nicht_verpennt*100/(@verpennt+@nicht_verpennt)}% nicht verpennt"],"verschlafrate")%>">

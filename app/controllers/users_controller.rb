@@ -28,36 +28,73 @@ class UsersController < ApplicationController
     #berechnet die durchschnittliche Schlafdauer pro Tag
 
     temp = 0
-
+    zaehler = 0
     data1=0
+
     #alle Schlafposts vom current_user + rückwärtsgeordnet nach Datum
     @schlafpost = Schlafpost.find_all_by_user_id(params[:user_id],:order => "date DESC")
-    data_c = (@schlafpost.first.ende - @schlafpost.first.anfang)/3600
-    data_c += 24 if data_c<0
+ #   data_c = (@schlafpost.first.ende - @schlafpost.first.anfang)/3600
+ #   data_c += 24 if data_c<0
     @schlafpost.each do |schlafblog|
       dauer = (schlafblog.ende - schlafblog.anfang)/3600
       if dauer<0
         dauer += 24
       end
-      if schlafblog.date == temp
+      data1+=dauer
+      unless schlafblog.date == temp
+      zaehler+=1
 
-        data1 += dauer
-        if schlafblog == @schlafpost.last
-          data_c = (data_c + data1)/2
-        end
-      else
-        data_c = (data_c + data1)/2
-        data1=dauer
+#        data1 += dauer
+#        if schlafblog == @schlafpost.last
+#          zaehler+=1
+#        end
+#      else
+#        data_c = (data_c + data1)
+#        data1+=dauer
+
         temp = schlafblog.date
       end
     end
-    data_c=data_c.round(2)
-    @data = [data_c,(24-data_c)]
+    data1/=zaehler
+    data1=round_n(data1)
+    @data = [data1,(24-data1)]
+
+
+
+
+
+
+      @nicht_verpennt = 0
+      @verpennt = 0
+    @schlafpost = Schlafpost.find_all_by_user_id(params[:user_id])
+    @schlafpost.each do |schlafpost|
+       if schlafpost.verpennt
+         @verpennt+=1
+       else
+         @nicht_verpennt+=1
+       end
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   end
 
   private
-  def round_n(n)
-    val = (self*10**n).round.to_f / 10**n
+  def round_n(b)
+    val = (b*10**2).round.to_f / 10**2
   end
 
 end

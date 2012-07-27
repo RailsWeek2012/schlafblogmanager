@@ -3,6 +3,7 @@ class SchlafpostsController < ApplicationController
   # GET /schlafposts
   # GET /schlafposts.json
   def index
+    #alle User_schlafposts, die zur ausgewählten ID gehören + rückwärts sortiert nach Datum
     @schlafposts = Schlafpost.find_all_by_user_id(params[:id],:order => "date DESC")
 
     respond_to do |format|
@@ -14,6 +15,7 @@ class SchlafpostsController < ApplicationController
   # GET /schlafposts/1
   # GET /schlafposts/1.json
   def show
+    #brauch man eig. nicht, es sei denn man schaut explizit auf nur einen Post
     @schlafpost = Schlafpost.find(params[:id])
 
     respond_to do |format|

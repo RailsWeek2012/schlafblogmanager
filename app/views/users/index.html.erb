@@ -21,5 +21,6 @@
       <% end %>
   </tbody>
 </table>
-
+ <% if user_signed_in? %>
 <%=  link_to 'neuer Schlafblog', new_schlafpost_path, :class => "btn btn-mini btn-success" %>
+  <% end %>

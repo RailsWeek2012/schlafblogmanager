@@ -25,20 +25,29 @@ class UsersController < ApplicationController
 
 
   def charts
+    #berechnet die durchschnittliche Schlafdauer pro Tag
+
     temp = 0
 
     data1=0
-    @schlafpost = Schlafpost.find_all_by_user_id(params[:user_id])
+    #alle Schlafposts vom current_user + rückwärtsgeordnet nach Datum
+    @schlafpost = Schlafpost.find_all_by_user_id(params[:user_id],:order => "date DESC")
     data_c = (@schlafpost.first.ende - @schlafpost.first.anfang)/3600
+    data_c += 24 if data_c<0
     @schlafpost.each do |schlafblog|
+      dauer = (schlafblog.ende - schlafblog.anfang)/3600
+      if dauer<0
+        dauer += 24
+      end
       if schlafblog.date == temp
-        data1 += (schlafblog.ende - schlafblog.anfang) /3600
+
+        data1 += dauer
         if schlafblog == @schlafpost.last
           data_c = (data_c + data1)/2
         end
       else
         data_c = (data_c + data1)/2
-        data1=(schlafblog.ende - schlafblog.anfang) /3600
+        data1=dauer
         temp = schlafblog.date
       end
     end

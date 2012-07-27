@@ -13,6 +13,11 @@ http://twitter.github.com/bootstrap/components.html
 http://railscasts.com/episodes/241-simple-omniauth;
 https://github.com/dlindahl/omniauth-cas
 
+(Google-chart)
+https://github.com/mattetti/googlecharts
+http://chart.apis.google.com
+
+
 (allgemein)
 http://openbook.galileocomputing.de/ruby_on_rails/;
 stackoverflow.com/

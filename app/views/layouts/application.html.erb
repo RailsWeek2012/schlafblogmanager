@@ -1,3 +1,4 @@
+<!--vorlage aus bootstrap -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,7 @@
         <div class="span3">
           <h2>Information</h2>
           <%= link_to "Statistiken", charts_path(current_user.id), :class => "btn btn-large" if user_signed_in?%>
+          <%= link_to "info", "http://de.wikipedia.org/wiki/Polyphasischer_Schlaf", :class => "btn btn-large" %>
           <br>
 
 
